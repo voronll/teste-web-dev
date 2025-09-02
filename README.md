@@ -63,7 +63,7 @@ src/
 ## Funcionalidades
 
 ###  Data Table de Exibição dos Usuários
-Para exibir os usuários, utilizei o [Data Table do Shadcn](https://ui.shadcn.com/docs/components/data-table), que oferece uma tabela modular e interativa, facilitando sua manutenção e aplicabilidade no projeto.  
+Para exibir os usuários, utilizei o [Data Table do Shadcn](https://ui.shadcn.com/docs/components/data-table), que oferece uma tabela modular e interativa, facilitando sua manutenção e aplicabilidade no projeto. O grande diferencial desse DataTable é o fato dele ser totalmente personalizável, o que te da a liberdade de colocar filtros, paginação e estilizações mais avançadas.
 
 ### Geolocalização
 Como funcionalidade adicional, aproveitei para adicionar um serviço de geolocalização, onde consumi uma [API da Mozilla](https://developer.mozilla.org/pt-BR/docs/Web/API/Geolocation) que utiliza a permissão do navegador para puxar a localização do usuário.
