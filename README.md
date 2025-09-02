@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sistema de visualização de usuários
+Saudações!
 
-## Getting Started
+Essa aplicação web faz parte do desafio [Desafio de Programação da Calpar](https://github.com/tiCalpar/frontend-dev-test) para a posição de **Desenvolvedor Front End**.
+O objetivo era criar um projeto básico utilizando um framework web de minha escolha e demonstrar as seguintes habilidades:
+ 1. **Consumir uma API**
+ 2. **Desenvolver uma funcionalidade específica**
 
-First, run the development server:
+Os dados que retornam da [API](https://09441c3d-9208-4fa9-a576-ba237af6b17c.mock.pstmn.io/) são bem simples, é o "nome" em *string* e o status "disponivel" em *boolean*.
+
+O que eu desenvolvi foi um sistema limpo, bonito e performático utilizando stacks atuais baseadas em suas documentações, exibindo os usuários de forma visual e otimizada, além de implementar dois extras, um switch de tema escuro e claro e uma pequena descrição no header para exibir a geolocalização do usuário utilizando ferramentas nativas do navegador.
+
+---
+### Como rodar o projeto (localhost):
+
+
+1.  **Clone o repositório**
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+git  clone https://github.com/voronll/teste-web-dev
+
+cd  dev-web-test
+
 ```
+2.  **Instale as dependências**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+npm  install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+3.  **Execute o projeto**
 
-## Learn More
+```bash
 
-To learn more about Next.js, take a look at the following resources:
+npm  run  dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+4.  **Acesse no navegador**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+http://localhost:3000
 
-## Deploy on Vercel
+```
+---
+### Estrutura de pastas e seus significados
+```
+src/
+├── app/
+│   ├── home/
+│   │   └── page.tsx          # Página principal com data table
+│   ├── layout.tsx            # Layout com ThemeProvider
+│   └── page.tsx              # Página de login
+├── components/
+│   ├── ui/
+│   │   ├── button.tsx        # Componente Button reutilizável
+│   │   ├── input.tsx         # Componente Input
+│   │   └── table.tsx         # Componentes de tabela
+│   ├── header.tsx            # Header com tema e localização
+│   ├── loading-table.tsx     # Skeleton de loading
+│   └── usuarios-data-table/
+│       ├── data-table.tsx    # Data table principal
+│       └── columns.tsx       # Definição das colunas
+├── contexts/
+│   └── theme-context.tsx     # Contexto para tema escuro/claro
+└── lib/
+    ├── api.ts               # Funções de API
+    └── utils.ts             # Utilitários (cn function)
+```
+## Funcionalidades
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+###  Data Table de Exibição dos Usuários
+Para exibir os usuários, utilizei o [Data Table do Shadcn](https://ui.shadcn.com/docs/components/data-table), que oferece uma tabela modular e interativa, facilitando sua manutenção e aplicabilidade no projeto.  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Geolocalização
+Como funcionalidade adicional, aproveitei para adicionar um serviço de geolocalização, onde consumi uma [API da Mozilla](https://developer.mozilla.org/pt-BR/docs/Web/API/Geolocation) que utiliza a permissão do navegador para puxar a localização do usuário.
+
+### Sistema de Temas
+Implementei também uma funcionalidade de mudança de tema, onde quando o usuário clica no botão de lua/sol, as cores do sistema mudam. Ela funciona utilizando a lib **Theme** do próprio React, onde ela salva a escolha do tema no próprio localStorage (da para ser salva no *session*, caso exista interação com contas de usuários) e é estilizada na variável global de CSS e Tailwind.
+
+## Stacks utilizadas
+
+ - TypeScript
+ - React
+ - Next.JS
+ - Tailwind.CSS
+---

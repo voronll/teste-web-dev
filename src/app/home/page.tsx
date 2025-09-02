@@ -19,7 +19,7 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const testApi = async () => {
+    const fetchApi = async () => {
       try {
         const result = await fetchUsers();
         setData(result);
@@ -58,7 +58,7 @@ export default function Home() {
       }
     };
 
-    testApi();
+    fetchApi();
     getLocation();
   }, []);
 
@@ -66,7 +66,6 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Header 
         title="Gerenciamento de Usuários"
-        subtitle="Visualize e gerencie os usuários do sistema"
         location={location || undefined}
       />
       

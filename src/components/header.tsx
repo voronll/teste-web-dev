@@ -5,14 +5,13 @@ import { Button } from "@/components/ui/button";
 
 interface HeaderProps {
   title: string;
-  subtitle?: string;
   location?: {
     city?: string;
     country?: string;
   };
 }
 
-export function Header({ title, subtitle, location }: HeaderProps) {
+export function Header({ title, location }: HeaderProps) {
   const { theme, toggleTheme } = useTheme();
 
   return (
@@ -23,11 +22,6 @@ export function Header({ title, subtitle, location }: HeaderProps) {
             <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
               {title}
             </h1>
-            {subtitle && (
-              <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
-                {subtitle}
-              </p>
-            )}
           </div>
           <div className="flex items-center space-x-4">
             <Button
