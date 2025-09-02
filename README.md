@@ -17,31 +17,23 @@ O que eu desenvolvi foi um sistema limpo, bonito e performático utilizando stac
 1.  **Clone o repositório**
 
 ```bash
-
 git  clone https://github.com/voronll/teste-web-dev
-
-cd  dev-web-test
-
 ```
-2.  **Instale as dependências**
-
+2.  **Navegue até o repositório**
 ```bash
-
+cd teste-web-dev
+```
+3.  **Instale as dependências**
+```bash
 npm  install
-
 ```
-3.  **Execute o projeto**
-
+4.  **Execute o projeto**
 ```bash
-
 npm  run  dev
-
 ```
-4.  **Acesse no navegador**
-
+5.  **Acesse no navegador**
 ```
 http://localhost:3000
-
 ```
 ---
 ### Estrutura de pastas e seus significados
